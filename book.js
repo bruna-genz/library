@@ -9,9 +9,15 @@ function Book(title, author, pages, status) {
     this.info = () => `${this.title} by ${this.author}, ${this.pages} pages, ${this.status}`
 }
 
-function addBookToLibrary(book) {
+function addBookToLibrary(form) {
+    const title = form.bookTitle.value
+    const author = form.bookAuthor.value
+    const pages = form.bookPages.value
+    const status = form.bookStatus.value
+    let book = new Book(title,author,pages,status)
     myLibrary.push(book)
-  }
+  
+}
 
 myBook = new Book('Harry Potter', 'J.K. Rowling', 320, "yes")
 addBookToLibrary(myBook)
@@ -42,16 +48,14 @@ myLibrary.forEach((book) => {
                       </div>
 
                       <div class="content">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                          <a href="#">#css</a> <a href="#">#responsive</a>
-                          <br>
-                          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                        Number of pages: ${book.pages}
+                          Status of this book: ${book.status}
                       </div>
                   </div>
                 </div>`
   li.insertAdjacentHTML( 'beforeend', bookText );
   list.appendChild(li)
 })
+
 
 

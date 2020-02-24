@@ -3,4 +3,8 @@
   padding: 0;
   box-sizing: border-box; }
 
+/*   LIST   */
+#book-list {
+  display: flex; }
+
 /*# sourceMappingURL=index.css.map */
