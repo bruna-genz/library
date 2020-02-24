@@ -4,7 +4,7 @@
 
 ![screenshot]()
 
-You can find the original description in [The Odin Project(https://www.theodinproject.com/courses/javascript/lessons/library)
+You can find the original description in [The Odin Project](https://www.theodinproject.com/courses/javascript/lessons/library)
 
 ## Built With
 
