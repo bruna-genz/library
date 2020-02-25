@@ -41,12 +41,20 @@ function addBookToLibrary() {
     const pages = document.querySelector('[name="bookPages"]').value
     const status = document.querySelector('[name="bookStatus"]').value
     let book = new Book(title,author,pages,status)
-    console.log(book)
     myLibrary.push(book)
     createCard(myLibrary)
-    console.log(status)
     clearInputs()
 }
+
+
+function deleteBook(atr) {
+    
+    const index = atr.dataset.index
+    
+    console.log(index)
+    myLibrary.splice(index,1)
+    
+} 
 
 function clearInputs() {
     document.querySelector('[name="bookTitle"]').value = ""
@@ -56,7 +64,9 @@ function clearInputs() {
 }
 
 function createCard(myLibrary) {
+
     const book = myLibrary[myLibrary.length-1]
+    const index = myLibrary.indexOf(book)
     const li = document.createElement('li')
     const bookText = `<div class="card">
                     <div class="card-image">
@@ -81,6 +91,8 @@ function createCard(myLibrary) {
                             Number of pages: ${book.pages}</br>
                             Status of this book: ${book.status}
                         </div>
+
+                        <button class="button is-danger delete-book" data-index="${index}" onClick ="deleteBook(this)">Delete</button>
                     </div>
                     </div>`
     li.insertAdjacentHTML( 'beforeend', bookText );
