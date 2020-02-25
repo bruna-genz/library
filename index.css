@@ -11,4 +11,7 @@
   #book-list li {
     margin-bottom: 3em; }
 
+.hidden {
+  display: none; }
+
 /*# sourceMappingURL=index.css.map */

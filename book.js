@@ -1,6 +1,25 @@
 let myLibrary = []
-
 const list = document.getElementById("book-list")
+
+function displayForm() {
+    let form = document.getElementById("book-form")
+    form.classList.toggle("hidden")
+}
+
+/*function changeText() {
+    let btn = document.getElementsByClassName(".diplay-form")
+    btn.textContent = "Add new book"
+    console.log(btn)
+    if(btn.innerHTML == "Add new book") {
+        btn.innerHTML = "Hide form"
+    } else {
+        btn.innerHTML = "Add new book"
+    }
+}*/
+
+document.querySelector(".display-form").addEventListener('click', () => {
+    displayForm()
+})
 
 function Book(title, author, pages, status) {
     this.title = title
@@ -12,7 +31,8 @@ function Book(title, author, pages, status) {
 
 const btn = document.getElementById("submit-button")
 btn.addEventListener("click", () => {
-    addBookToLibrary()
+    displayForm()
+    addBookToLibrary() 
 })
 
 function addBookToLibrary() {
@@ -29,16 +49,11 @@ function addBookToLibrary() {
 }
 
 function clearInputs() {
-     
     document.querySelector('[name="bookTitle"]').value = ""
     document.querySelector('[name="bookAuthor"]').value= ""
     document.querySelector('[name="bookPages"]').value= ""
-    document.querySelector('[name="bookStatus"]').value= ""
-    
+    document.querySelector('[name="bookStatus"]').value= ""  
 }
-
-
-
 
 function createCard(myLibrary) {
     const book = myLibrary[myLibrary.length-1]
@@ -69,8 +84,7 @@ function createCard(myLibrary) {
                     </div>
                     </div>`
     li.insertAdjacentHTML( 'beforeend', bookText );
-    list.appendChild(li)
-    
+    list.appendChild(li)  
 }
 
 
