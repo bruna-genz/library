@@ -6,7 +6,7 @@ function Book(title, author, pages, status) {
     this.title = title
     this.author = author
     this.pages = pages
-    this.status = status == "yes" ? "already read" : "not read yet"
+    this.status = status == "on" ? "already read" : "not read yet"
     this.info = () => `${this.title} by ${this.author}, ${this.pages} pages, ${this.status}`
 }
 
@@ -24,22 +24,24 @@ function addBookToLibrary() {
     console.log(book)
     myLibrary.push(book)
     createCard(myLibrary)
+    console.log(status)
+    clearInputs()
 }
 
-//function clearInputs() {}
+function clearInputs() {
+     
+    document.querySelector('[name="bookTitle"]').value = ""
+    document.querySelector('[name="bookAuthor"]').value= ""
+    document.querySelector('[name="bookPages"]').value= ""
+    document.querySelector('[name="bookStatus"]').value= ""
+    
+}
 
-createCard(myLibrary)
-/*myBook = new Book('Harry Potter', 'J.K. Rowling', 320, "yes")
-myLibrary.push(myBook)
-console.log(myBook.info(), myLibrary)
 
 
-
-secondBook = new Book('babababa', 'Basna', 452, "no")
-addBookToLibrary(secondBook)*/
 
 function createCard(myLibrary) {
-    myLibrary.forEach((book) => {
+    const book = myLibrary[myLibrary.length-1]
     const li = document.createElement('li')
     const bookText = `<div class="card">
                     <div class="card-image">
@@ -61,14 +63,15 @@ function createCard(myLibrary) {
                         </div>
 
                         <div class="content">
-                            Number of pages: ${book.pages}
+                            Number of pages: ${book.pages}</br>
                             Status of this book: ${book.status}
                         </div>
                     </div>
                     </div>`
     li.insertAdjacentHTML( 'beforeend', bookText );
     list.appendChild(li)
-    })
+    
 }
+
 
 

@@ -7,8 +7,9 @@
 
 #book-list {
     display: flex;
-
-    .card {
-        
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    li {
+        margin-bottom: 3em;
     }
 }

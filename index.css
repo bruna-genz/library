@@ -5,6 +5,10 @@
 
 /*   LIST   */
 #book-list {
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; }
+  #book-list li {
+    margin-bottom: 3em; }
 
 /*# sourceMappingURL=index.css.map */
