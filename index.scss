@@ -17,3 +17,49 @@
 .hidden {
     display: none;
 }
+
+.container {
+    flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+    #flow {
+        display: block;
+        span {
+            display: block;
+            width: 200vw;
+            height: 200vw;
+            position: absolute;
+            top: -180vw;
+            left: -50vw;
+            border-radius: 90vw;
+            opacity: 0.6;
+        }
+        .flow-1 {
+            background: #3281ff;
+            -webkit-animation: rotating 20s linear infinite;
+            -moz-animation: rotating 20s linear infinite;
+            -ms-animation: rotating 20s linear infinite;
+            -o-animation: rotating 20s linear infinite;
+            animation: rotating 20s linear infinite;
+        }
+        .flow-2 {
+            background: #f442ee;
+        position: absolute;
+        -webkit-animation: rotating 15s linear infinite;
+        -moz-animation: rotating 15s linear infinite;
+        -ms-animation: rotating 15s linear infinite;
+        -o-animation: rotating 15s linear infinite;
+        animation: rotating 15s linear infinite;
+        }
+        .flow-3 {
+            background: #42eef4;
+        position: absolute;
+        -webkit-animation: rotating 7s linear infinite;
+        -moz-animation: rotating 7s linear infinite;
+        -ms-animation: rotating 7s linear infinite;
+        -o-animation: rotating 7s linear infinite;
+        animation: rotating 7s linear infinite;
+        }
+    }
+}

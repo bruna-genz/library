@@ -46,14 +46,12 @@ function addBookToLibrary() {
     clearInputs()
 }
 
-
 function deleteBook(atr) {
-    
     const index = atr.dataset.index
-    
     console.log(index)
     myLibrary.splice(index,1)
-    
+    console.log(myLibrary)
+    createCard(myLibrary)
 } 
 
 function clearInputs() {
@@ -63,40 +61,43 @@ function clearInputs() {
     document.querySelector('[name="bookStatus"]').value= ""  
 }
 
+const booksContainer = document.getElementById("book-list")
 function createCard(myLibrary) {
-
-    const book = myLibrary[myLibrary.length-1]
-    const index = myLibrary.indexOf(book)
-    const li = document.createElement('li')
-    const bookText = `<div class="card">
-                    <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                    </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-left">
-                            <figure class="image is-48x48">
-                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                            </figure>
-                            </div>
-                            <div class="media-content">
-                            <p class="title is-4">${book.title}</p>
-                            <p class="subtitle is-6">${book.author}</p>
-                            </div>
+    booksContainer.innerHTML = ''
+    myLibrary.forEach((book) => {
+        console.log(book)
+        const index = myLibrary.indexOf(book)
+        const li = document.createElement('li')
+        const bookText = `<div class="card">
+                        <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                        </figure>
                         </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                </figure>
+                                </div>
+                                <div class="media-content">
+                                <p class="title is-4">${book.title}</p>
+                                <p class="subtitle is-6">${book.author}</p>
+                                </div>
+                            </div>
 
-                        <div class="content">
-                            Number of pages: ${book.pages}</br>
-                            Status of this book: ${book.status}
+                            <div class="content">
+                                Number of pages: ${book.pages}</br>
+                                Status of this book: ${book.status}
+                            </div>
+
+                            <button class="button is-danger delete-book" data-index="${index}" onClick ="deleteBook(this)">Delete</button>
                         </div>
-
-                        <button class="button is-danger delete-book" data-index="${index}" onClick ="deleteBook(this)">Delete</button>
-                    </div>
-                    </div>`
-    li.insertAdjacentHTML( 'beforeend', bookText );
-    list.appendChild(li)  
+                        </div>`
+        li.insertAdjacentHTML( 'beforeend', bookText );
+        list.appendChild(li)  
+    })
 }
 
 
