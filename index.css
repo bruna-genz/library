@@ -93,5 +93,7 @@ html {
     -webkit-transform: rotate(360deg);
     -o-transform: rotate(360deg);
     transform: rotate(360deg); } }
+.card:hover {
+  transform: scale(1.7); }
 
 /*# sourceMappingURL=index.css.map */
