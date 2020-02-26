@@ -1,6 +1,9 @@
 # JavaScript Library
 
-> In this project we created a library app.
+> In this project we created a library app. It has the following fuctionalities:
+- add new books to library;
+- delete books from library;
+- change status of the reading.
 
 ![screenshot]()
 
