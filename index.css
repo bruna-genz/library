@@ -20,6 +20,10 @@ html {
 
 .navbar {
   z-index: 100; }
+  .navbar h1 {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Amatic SC', serif; }
 
 #book-form #book-status {
   color: white; }
@@ -30,9 +34,9 @@ html {
   position: relative;
   width: auto;
   display: flex;
-  flex-direction: row; }
+  flex-direction: column; }
   .container button {
-    margin: 0 auto; }
+    margin: 0 auto 20px auto; }
   .container #flow {
     display: block; }
     .container #flow span {
@@ -94,6 +98,6 @@ html {
     -o-transform: rotate(360deg);
     transform: rotate(360deg); } }
 .card:hover {
-  transform: scale(1.7); }
+  transform: scale(1.1); }
 
 /*# sourceMappingURL=index.css.map */

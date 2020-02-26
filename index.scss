@@ -25,6 +25,11 @@ html {
 
 .navbar {
     z-index: 100;
+    h1 {
+        font-size: 25px;
+        font-weight: bold;
+        font-family: 'Amatic SC', serif;
+    }
 }
 
 #book-form {
@@ -33,18 +38,15 @@ html {
     }
 }
 
-
 .container {
-    
     flex-grow: 1;
     margin: 66px auto;
     position: relative;
     width: auto;
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
     button {
-        margin: 0 auto;
+        margin: 0 auto 20px auto;
     } 
     #flow {
         display: block;
@@ -121,6 +123,6 @@ html {
 }
 .card {
     &:hover {
-        transform: scale(1.7);
+        transform: scale(1.1);
     }
 }

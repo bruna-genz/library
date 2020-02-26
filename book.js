@@ -25,7 +25,7 @@ function Book(title, author, pages, status) {
     this.title = title
     this.author = author
     this.pages = pages
-    this.status = status == "on" ? "already read" : "not read yet"
+    this.status = status == "on" ? "Already read" : "Not read yet"
     this.info = () => `${this.title} by ${this.author}, ${this.pages} pages, ${this.status}`
 }
 
@@ -44,6 +44,19 @@ function addBookToLibrary() {
     myLibrary.push(book)
     createCard(myLibrary)
     clearInputs()
+}
+
+function changeStatus(atr){
+    const book = myLibrary[atr.dataset.index]
+    if(book.status == "Already read") {
+        book.status = "Not read yet"
+        atr.style.backgroundColor = "red"
+    } else {
+        book.status = "Already read"
+        atr.style.backgroundColor = "#3EC46D"
+    }
+    atr.innerHTML = book.status
+    console.log(book.status)
 }
 
 function deleteBook(atr) {
@@ -89,14 +102,14 @@ function createCard(myLibrary) {
 
                             <div class="content">
                                 Number of pages: ${book.pages}</br>
-                                Status of this book: ${book.status}
                             </div>
 
+                            <button class="button is-success status-btn" data-index="${index}" onClick ="changeStatus(this)">${book.status}</button>
                             <button class="button is-danger delete-book" data-index="${index}" onClick ="deleteBook(this)">Delete</button>
                         </div>
                         </div>`
-        li.insertAdjacentHTML( 'beforeend', bookText );
-        list.appendChild(li)  
+        li.insertAdjacentHTML('beforeend', bookText );
+        list.appendChild(li)
     })
 }
 
