@@ -1,21 +1,10 @@
-let myLibrary = []
+const myLibrary = (JSON.parse(localStorage.getItem("savedLibrary")) == null) ? [] : JSON.parse(localStorage.getItem("savedLibrary"))
 const list = document.getElementById("book-list")
 
 function displayForm() {
     let form = document.getElementById("book-form")
     form.classList.toggle("hidden")
 }
-
-/*function changeText() {
-    let btn = document.getElementsByClassName(".diplay-form")
-    btn.textContent = "Add new book"
-    console.log(btn)
-    if(btn.innerHTML == "Add new book") {
-        btn.innerHTML = "Hide form"
-    } else {
-        btn.innerHTML = "Add new book"
-    }
-}*/
 
 document.querySelector(".display-form").addEventListener('click', () => {
     displayForm()
@@ -44,6 +33,7 @@ function addBookToLibrary() {
     myLibrary.push(book)
     createCard(myLibrary)
     clearInputs()
+    saveInfo()
 }
 
 function changeStatus(atr){
@@ -56,14 +46,11 @@ function changeStatus(atr){
         atr.style.backgroundColor = "#3EC46D"
     }
     atr.innerHTML = book.status
-    console.log(book.status)
 }
 
 function deleteBook(atr) {
     const index = atr.dataset.index
-    console.log(index)
     myLibrary.splice(index,1)
-    console.log(myLibrary)
     createCard(myLibrary)
 } 
 
@@ -113,5 +100,8 @@ function createCard(myLibrary) {
     })
 }
 
+function saveInfo() {
+    localStorage.setItem('savedLibrary', JSON.stringify(myLibrary))
+}
 
-
+createCard(myLibrary)
