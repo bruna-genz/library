@@ -27,14 +27,14 @@ function createCard(myLibrary) {
     const bookText = `<div class="card">
                         <div class="card-image">
                         <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                            <img src="https://images.unsplash.com/photo-1517770413964-df8ca61194a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Placeholder image">
                         </figure>
                         </div>
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
                                 <figure class="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                    <img src="assets/book.svg" alt="Placeholder image">
                                 </figure>
                                 </div>
                                 <div class="media-content">
