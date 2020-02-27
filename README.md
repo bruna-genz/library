@@ -17,7 +17,7 @@ You can find the original description in [The Odin Project](https://www.theodinp
 
 ## Live Demo
 
-[Live Demo Link](https://rawcdn.githack.com/bruna-genz/library/47d90c98c7defbb50d187453aa29e7d9257a2ce0/index.html)
+[Live Demo Link](https://rawcdn.githack.com/bruna-genz/library/79416bab2f6701cba9949d3fddbe4e290aa840be/index.html)
 
 
 ## Getting Started
