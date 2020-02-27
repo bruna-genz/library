@@ -5,7 +5,7 @@
 - delete books from library;
 - change status of the reading.
 
-![screenshot]()
+![screenshot](assets/homepage.png)
 
 You can find the original description in [The Odin Project](https://www.theodinproject.com/courses/javascript/lessons/library)
 
@@ -17,14 +17,14 @@ You can find the original description in [The Odin Project](https://www.theodinp
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://rawcdn.githack.com/bruna-genz/library/47d90c98c7defbb50d187453aa29e7d9257a2ce0/index.html)
 
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 - open a new terminal and run the following command:
-- `git clone git@github.com:bruna-genz/next-web-page.git`
+- `git clone https://github.com/bruna-genz/library.git`
 
 ### Prerequisites
 - web browser
