@@ -24,7 +24,7 @@ You can find the original description in [The Odin Project(https://www.theodinpr
 
 To get a local copy up and running follow these simple example steps.
 - open a new terminal and run the following command:
-- `git@github.com:bruna-genz/library.git`
+- `git clone https://github.com/bruna-genz/library.git`
 
 ### Prerequisites
 - web browser

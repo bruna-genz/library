@@ -1,4 +1,4 @@
-const myLibrary = (JSON.parse(localStorage.getItem('savedLibrary')) == null) ? [] : JSON.parse(localStorage.getItem('savedLibrary'));
+const myLibrary = JSON.parse(localStorage.getItem('savedLibrary')) || [];
 const list = document.getElementById('book-list');
 
 function displayForm() {
@@ -85,6 +85,7 @@ btn.addEventListener('click', () => {
   addBookToLibrary();
 });
 
+// eslint-disable-next-line no-unused-vars
 function changeStatus(atr) {
   const book = myLibrary[atr.dataset.index];
   if (book.status === 'Already read') {
@@ -95,11 +96,14 @@ function changeStatus(atr) {
     atr.style.backgroundColor = '#3EC46D';
   }
   atr.innerHTML = book.status;
+  localStorage.setItem('savedLibrary', JSON.stringify(myLibrary));
 }
 
+// eslint-disable-next-line no-unused-vars
 function deleteBook(atr) {
   const { index } = atr.dataset;
   myLibrary.splice(index, 1);
+  localStorage.setItem('savedLibrary', JSON.stringify(myLibrary));
   createCard(myLibrary);
 }
 
